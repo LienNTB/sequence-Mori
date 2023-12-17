@@ -3,7 +3,7 @@ import os
 from docx import Document
 from docx.shared import *
 
-FOLDER_SEQUENCE = "./sequence"
+FOLDER_SEQUENCE = r"D:\GitHub\sequence-Mori\.document\sequence\Admin"
 
 def parse_mmdc_content(path: str) -> str:
     with open(path, 'r', encoding='utf-8') as f:
@@ -27,7 +27,7 @@ def render_mmd_to_img(mmd_content):
     return random_output_file_name
 
 def process_sequence_diagram():
-    document = Document('./template.docx')
+    document = Document(r'D:\GitHub\sequence-Mori\.document\template.docx')
 
     # Chỉnh layout thành a4
     section = document.sections[0]
