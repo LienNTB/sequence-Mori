@@ -4,6 +4,7 @@ actor user as người dùng
 participant ui as Trang Chủ
 participant manage as Quản lí sách
 participant db as Sách
+autonumber
 
 user->>+ui: Yêu cầu tìm kiếm
 ui->>+manage: Xử lí tìm kiếm sách theo từ khóa

@@ -16,3 +16,4 @@ manage->>-ui2:Trả về kết quả
 ui2->>+ui2: Cập nhật giao diện
 ui2->>-user: Hiển thị kết quả
 ```
+

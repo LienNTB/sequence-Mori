@@ -8,6 +8,8 @@ participant db as Ghi Chú Sách
 autonumber
 
 user->>+ui: Yêu cầu thêm ghi chú
+activate user
+activate ui
 ui->>+ui1: Hiển thị giao diện
 user->>+ui1: Thêm nội dung ghi chú
 ui1->>+manage: Xử lí yêu cầu thêm ghi chú
@@ -16,8 +18,10 @@ db-->>-manage:Trả về kết quả
 alt Thành công
   manage-->>ui:Trả về thông báo thêm thành công
 else Thất bại
-  manage-->>ui:Trả về thông báo thêm thất bại
+  manage-->>-ui:Trả về thông báo thêm thất bại
 end
 ui->>+ui: Cập nhật giao diện
 ui-->>-user: Hiển thị kết quả
+deactivate ui
+deactivate user
 ```
