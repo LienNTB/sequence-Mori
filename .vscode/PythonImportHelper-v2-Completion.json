@@ -1,0 +1,80 @@
+[
+    {
+        "label": "random",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "docx",
+        "description": "docx",
+        "isExtraImport": true,
+        "detail": "docx",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "docx.shared",
+        "description": "docx.shared",
+        "isExtraImport": true,
+        "detail": "docx.shared",
+        "documentation": {}
+    },
+    {
+        "label": "parse_mmdc_content",
+        "kind": 2,
+        "importPath": ".document.main",
+        "description": ".document.main",
+        "peekOfCode": "def parse_mmdc_content(path: str) -> str:\n    with open(path, 'r', encoding='utf-8') as f:\n        lines = f.readlines()\n        title = lines[0].replace('#', '').strip()\n        content = '\\n'.join(lines[1:])\n        return title, content\ndef render_mmd_to_img(mmd_content):\n    os.makedirs('temp', exist_ok=True)\n    random_prefix = str(random())\n    random_input_file_name = os.path.join('temp', f'{random_prefix}.md')",
+        "detail": ".document.main",
+        "documentation": {}
+    },
+    {
+        "label": "render_mmd_to_img",
+        "kind": 2,
+        "importPath": ".document.main",
+        "description": ".document.main",
+        "peekOfCode": "def render_mmd_to_img(mmd_content):\n    os.makedirs('temp', exist_ok=True)\n    random_prefix = str(random())\n    random_input_file_name = os.path.join('temp', f'{random_prefix}.md')\n    random_output_file_name = os.path.join('temp', f'{random_prefix}.png')\n    with open(random_input_file_name, 'w', encoding='utf-8') as f:\n        f.write(mmd_content)\n    os.system(f'mmdc -i {random_input_file_name} -o {random_output_file_name}')\n    return random_output_file_name\ndef process_sequence_diagram():",
+        "detail": ".document.main",
+        "documentation": {}
+    },
+    {
+        "label": "process_sequence_diagram",
+        "kind": 2,
+        "importPath": ".document.main",
+        "description": ".document.main",
+        "peekOfCode": "def process_sequence_diagram():\n    document = Document(r'D:\\GitHub\\sequence-Mori\\.document\\template.docx')\n    # Chỉnh layout thành a4\n    section = document.sections[0]\n    section.page_height = Mm(297)\n    section.page_width = Mm(210)\n    section.left_margin = Mm(25.4)\n    section.right_margin = Mm(25.4)\n    section.top_margin = Mm(25.4)\n    section.bottom_margin = Mm(25.4)",
+        "detail": ".document.main",
+        "documentation": {}
+    },
+    {
+        "label": "clean",
+        "kind": 2,
+        "importPath": ".document.main",
+        "description": ".document.main",
+        "peekOfCode": "def clean():\n    import shutil\n    shutil.rmtree('./temp')\nprocess_sequence_diagram()\nclean()",
+        "detail": ".document.main",
+        "documentation": {}
+    },
+    {
+        "label": "FOLDER_SEQUENCE",
+        "kind": 5,
+        "importPath": ".document.main",
+        "description": ".document.main",
+        "peekOfCode": "FOLDER_SEQUENCE = r\"D:\\GitHub\\sequence-Mori\\.document\\sequence\\Admin\"\ndef parse_mmdc_content(path: str) -> str:\n    with open(path, 'r', encoding='utf-8') as f:\n        lines = f.readlines()\n        title = lines[0].replace('#', '').strip()\n        content = '\\n'.join(lines[1:])\n        return title, content\ndef render_mmd_to_img(mmd_content):\n    os.makedirs('temp', exist_ok=True)\n    random_prefix = str(random())",
+        "detail": ".document.main",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,29 @@
+```mermaid
+sequenceDiagram
+actor user as người dùng
+participant ui as Giao diện thanh toán hội viên
+participant manage as Quản lí giao dịch
+participant db as Giao dịch
+autonumber
+
+user->>+ui: Yêu cầu giao dịch gói hội viên
+activate user
+activate ui
+ui->>+manage: Xử lí thanh toán gói hội viên
+activate manage
+manage->>+db: Xử lí dữ liệu giao dịch hội viên
+alt Thành công
+db->>manage:Trả về kết quả thành công
+manage-->>-ui:Trả về kết quả
+ui->>+ui: Cập nhật thông báo
+ui-->>-user: Hiển thị thông báo thanh toán thành công
+else Thất bại
+db->>-manage:Trả về thông báo thanh toán thất bại
+manage-->>-ui:Trả về kết quả
+ui->>+ui: Cập nhật thông báo
+ui-->>-user: Hiển thị thông báo lỗi
+end
+deactivate ui
+deactivate user
+
+```
