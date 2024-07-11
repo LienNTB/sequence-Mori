@@ -12,6 +12,7 @@ activate ui
 opt Sử dụng voucher giảm giá
 user->>+ui: Chọn voucher
 ui-->>-user: Trả về tổng tiền đã giảm giá
+user->>+ui: Bấm nút "Thanh toán"
 end
 ui->>+manage: Xử lí thanh toán sách
 activate manage

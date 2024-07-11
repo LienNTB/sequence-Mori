@@ -19,6 +19,7 @@ ui-->>-user: Hiển thị kết quả
 user->>+ui: Để tìm kiếm một giao dịch, mã giao dịch hoặc tên người dùng vào thanh tìm kiếm
 ui->>+manage: Xử lí lọc giao dịch dựa trên từ khóa tìm kiếm
 manage->>+db: Xử lí dữ liệu giao dịch
+db->>-manage:Trả về kết quả
 manage-->>-ui: Trả về kết quả
 ui-->>-user: Hiển thị kết quả
 deactivate ui
